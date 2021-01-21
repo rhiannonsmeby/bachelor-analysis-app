@@ -1,4 +1,95 @@
-.App {
-  text-align: center;
+header {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
 }
 
+ul {
+list-style: none;
+}
+
+header nav ul {
+  display: flex;
+  padding-left: 0;
+  justify-content: center;
+  float: right;
+}
+
+header {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding: 0 30px;
+}
+
+header h1 {
+margin: 14px 0;
+padding: 0;
+}
+
+header nav {
+margin: 18px;
+}
+
+header nav ul li a:hover, .icon a:hover {
+color: #2A9D8F;
+}
+
+
+header nav ul li a, .icon a {
+  color: #264563;
+  text-decoration: none;
+  margin: 0 20px 0 0;
+  font-size: 16px;
+}
+
+.contestant-simple-list li, .contestant-expanded-list li {
+border: 1px solid black;
+padding: 15px;
+justify-content: center;
+text-align: left;
+margin-right: 80px;
+}
+
+.circle {
+border-radius: 50%;
+justify-content: left;
+
+}
+
+.expanded-data li {
+border: 0px;
+}
+
+body {
+  font-family: "Open Sans",
+  sans-serif;
+  font-size: 20px;
+  color: #444;
+  text-align: center;
+  line-height: 1.5;
+}
+
+footer {
+  padding: 1% 0;
+  background-color: #aaa;
+}
+
+section {
+  min-height: 200px;
+  padding: 30px 15px;
+  background-color: #bbb;
+}
+
+section:nth-child(even) {
+  background-color: #ddd;
+}
+
+p {
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+p + p {
+  margin-top: 15px;
+}
