@@ -1,0 +1,9 @@
+.summary-content {
+    border-radius: 10px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.addSummaryForm {
+    margin-top: 100px;
+}

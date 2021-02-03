@@ -1,95 +1,195 @@
-header {
-  font-family: sans-serif;
-  display: flex;
-  flex-direction: row;
-}
-
-ul {
-list-style: none;
-}
-
-header nav ul {
-  display: flex;
-  padding-left: 0;
-  justify-content: center;
-  float: right;
-}
-
-header {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-padding: 0 30px;
-}
-
-header h1 {
-margin: 14px 0;
-padding: 0;
-}
-
-header nav {
-margin: 18px;
-}
-
-header nav ul li a:hover, .icon a:hover {
-color: #2A9D8F;
-}
-
-
-header nav ul li a, .icon a {
-  color: #264563;
-  text-decoration: none;
-  margin: 0 20px 0 0;
-  font-size: 16px;
-}
-
-.contestant-simple-list li, .contestant-expanded-list li {
-border: 1px solid black;
-padding: 15px;
-justify-content: center;
-text-align: left;
-margin-right: 80px;
-}
-
-.circle {
-border-radius: 50%;
-justify-content: left;
-
-}
-
-.expanded-data li {
-border: 0px;
-}
-
 body {
-  font-family: "Open Sans",
-  sans-serif;
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b);
+  font-family: "Open Sans", sans-serif;
   font-size: 20px;
   color: #444;
   text-align: center;
   line-height: 1.5;
-}
-
-footer {
-  padding: 1% 0;
-  background-color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 section {
-  min-height: 200px;
-  padding: 30px 15px;
-  background-color: #bbb;
+  background: white;
+  margin: 20px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-radius: 2rem;
+  padding: 10px;
 }
 
-section:nth-child(even) {
-  background-color: #ddd;
+.even-section {
+  margin: 0px;
+  border-radius: 0px;
+  background: rgba(68, 68, 68, 0.3);
+  color: #000;
+  list-style: none;
 }
 
-p {
+button, select, input {
+  border-radius: 2rem;
+  background: transparent;
+  font-family: "Open Sans", sans-serif;
+	border: 2px solid #444;
+	cursor: pointer;
+	font-size: 15px;
+  padding: 6px 24px;
+  margin: 5px;
+}
+
+h1, h2 {
+  font-weight: 900;
+}
+
+/* list styling */
+.nav {
+display: flex;
+flex-direction: row;
+list-style: none;
+justify-content: flex-end;
+padding-top: 20px;
+}
+
+a img {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+  float: left;
+}
+
+.extra-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.extra-nav li {
+  padding: 30px;
+}
+
+.nav li a {
+  color: #444;
+  text-decoration: none;
+  margin: 20px;
+  font-size: 15px;
+}
+
+ul {
+  list-style: none;
+}
+
+.directions {
+  margin-top: 0px;
+  font-size: 15px;
+}
+
+footer {
+  font-size: 15px;
+}
+
+/* .contestant-simple-list li, .contestant-expanded-list li {
+border: 1px solid black;
+display: flex;
+justify-content: center;
+text-align: center;
+} */
+
+
+/* grid display */
+.display-contestant-data {
+  max-width: 1335px;
   margin: 0 auto;
-  max-width: 650px;
+}
+.grid-rows {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
-p + p {
-  margin-top: 15px;
+.grid-item {
+  height: 400px;
+  flex-basis: 33.33%;
+  width: 250px;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
+}
+@media(max-width: 1333px) {
+  .grid-item {
+    flex-basis: 33.33%;
+  }
+}
+@media(max-width: 1073px) {
+   .grid-item {
+    flex-basis: 33.33%;
+  }
+}
+@media(max-width: 815px) {
+  .grid-item {
+    flex-basis: 50%;
+  }
+}
+@media(max-width: 555px) {
+  .grid-item {
+    flex-basis: 100%;
+  }
+}
+
+/*Media query for computer/ large screen view*/
+@media all and (min-width: 1000px) {
+  section {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+
+  .even-section {
+    margin: 0px;
+    padding: 30px;
+    border-radius: 0px;
+    background: rgba(68, 68, 68, 0.3);
+    color: #000;
+    list-style: none;
+    font-size: 18px;
+  }
+
+  .data-controls {
+    margin-left: 400px;
+    margin-right: 400px;
+    border-radius: 2rem;
+    padding: 10px 50px;
+  }
+
+  .data-search-controls {
+    margin-left: 200px;
+    margin-right: 200px;
+    border-radius: 2rem;
+    padding: 10px 50px;
+  }
+
+  .summary-instructions {
+    margin-left: 400px;
+    margin-right: 400px;
+    border-radius: 2rem;
+    padding: 10px 50px;
+  }
+
+  .nav li a:hover, .icon a:hover {
+    color: #fff;
+  }
+
+  .extra-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
 }

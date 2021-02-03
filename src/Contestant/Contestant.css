@@ -1,0 +1,14 @@
+.circle {
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+h4 {
+    font-weight: 900;
+    color: white;
+    margin: 0;
+    font-size: 20px;
+}

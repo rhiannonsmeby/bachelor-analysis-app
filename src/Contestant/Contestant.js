@@ -10,13 +10,13 @@ class Contestant extends React.Component {
     render() {
         return (
             <div className='Contestant'>
-                <Link to={`/contestant/`}>
-                    <img src={this.props.contestant_image} alt={this.props.contestant_name}/>
-                    <h2>{this.props.contestant_name}</h2>
-                </Link>
-                <Link to={`/season/`}>
-                    <img src={this.props.contestant_image} alt={this.props.contestant_name}/>
-                    <h2>{this.props.contestant_name}</h2>
+                <Link to={`/contestant/${this.props.contestant_id}`}>
+                        <div className='grid-item'>
+                            <div className='-container'>
+                                <img className='circle' src={this.props.contestant_image} alt={this.props.contestant_name}/>
+                                <h4 className="centered">{this.props.contestant_name}</h4>
+                            </div>
+                        </div>
                 </Link>
             </div>
         )

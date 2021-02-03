@@ -1,5 +1,4 @@
 import React from 'react'
-import DataSearch from '../DataSearch/DataSearch';
 import Contestant from '../Contestant/Contestant';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Context from '../Context'; 
@@ -8,34 +7,38 @@ export default class DataDisplay extends React.Component {
     static contextType = Context;
 
     render() {
-        const {contestant} = this.context;
-        const contestantMap = contestant.map(contestant => {
+        const keywordFilteredContestant = this.props.keywordFilteredContestant
+
+        const veryFilteredContestant = keywordFilteredContestant.filter(contestant => {
+            if (this.props.selectedSeason === 'All') {
+                return contestant
+            }
+            return contestant.assigned_season === Number(this.props.selectedSeason)
+        })
+
+        const filtersMap = veryFilteredContestant.map(contestant => {
             return (
                 <Contestant
+                    key={contestant.contestant_id}
                     contestant_id={contestant.contestant_id}
                     contestant_name={contestant.contestant_name}
-                    age={contestant.age}
-                    hometown={contestant.hometown}
-                    job={contestant.job}
-                    eliminated={contestant.eliminated}
-                    assigned_season={contestant.assigned_season}
                     contestant_image={contestant.contestant_image}
                 />
             )
         });
-        console.log(contestantMap)
         
         return (
-            <main>
-            <DataSearch />
-            <section className="displayData">
+            <div>
                 <div className='contestantDisplay'>
                     <ErrorBoundary>
-                        {contestantMap}
+                        <div className="display-contestant-data">
+                            <div className="grid-rows">
+                                {filtersMap}
+                            </div>
+                        </div>
                     </ErrorBoundary> 
                 </div>
-            </section>
-        </main>
+            </div>
         )
     }
 }

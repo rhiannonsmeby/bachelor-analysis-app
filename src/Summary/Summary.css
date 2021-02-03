@@ -1,0 +1,25 @@
+.content-summary-container {
+    border-radius: 10px;
+    object-fit: contain;
+    margin: 50px;
+    padding: 10px;
+    background: rgba(68, 68, 68, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    color: #fff;
+    margin-right: 50px;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.summary-button {
+    color: #fff;
+    border-color: #fff;
+}

@@ -1,16 +1,21 @@
 import React from 'react';
-import {Route, Switch, Link} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import BachelorContext from './Context'
 import LandingPage from  './LandingPage/LandingPage'
-import SeasonDisplay from './SeasonDisplay/SeasonDisplay'
+import SeasonPage from './SeasonPage/SeasonPage'
 import './App.css'
-import DataDisplay from './DataDisplay/DataDisplay';
+import ContestantExpanded from './ContestantExpanded/ContestantExpanded'
+import SearchDataPage from './SearchDataPage/SearchDataPage';
+import SummaryPage from './SummaryPage/SummaryPage';
+import SaveDataSummary from './SaveDataSummary/SaveDataSummary';
+import ExpandedSummary from './ExpandedSummary/ExpandedSummary';
 
 
 class App extends React.Component {
   state = {
     contestant: [],
-    season: []
+    season: [],
+    summary: [],
   }
 
   getSeasonData() {
@@ -49,45 +54,84 @@ class App extends React.Component {
       })
   }
 
+  getSummaryData() {
+    fetch(`http://localhost:8000/api/summary`)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Something went wrong')
+      }
+      return response.json();
+    })
+    .then(data => {
+      this.setState({
+        summary: data
+      })
+    })
+    .catch(err => {
+      alert(err);
+    })
+  }
+
+  deleteItem = (summaryId) => {
+    const filterState = this.state.summary.filter(summary => {
+      return summary.summary_id !== summaryId;
+    })
+    this.setState({
+      summary: filterState
+    })
+  } 
+
+  addSummary = (newSummary) => {
+    const addSummary = [...this.state.summary, newSummary]
+    this.setState({summary: addSummary})
+  }
 
   componentDidMount() {
     this.getContestantData()
     this.getSeasonData()
+    this.getSummaryData()
   }
 
   render() {
     const contextValue = {
       season: this.state.season,
-      contestant: this.state.contestant
+      contestant: this.state.contestant,
+      summary: this.state.summary,
+      deleteItem: this.deleteItem,
+      addSummary: this.addSummary
     }
-    console.log(contextValue)
 
   return (
   <div className='App'>
-    <header>
-      <nav>
-        <ul className="nav">
-          <li><Link to={`/`}>Home</Link></li>
-          <li><Link to={`/season`}>Season Overview</Link></li>
-          <li><Link to={`/contestant`}>Data Search</Link></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
     <BachelorContext.Provider
       value={contextValue}>
         <Route exact path='/'
           component={LandingPage}
         />
         <Route exact path='/season'
-          component={SeasonDisplay}
+          component={SeasonPage}
         />
         <Route exact path='/contestant'
-          component={DataDisplay}
+          component={SearchDataPage}
         />
+        <Route exact path='/summarypage'
+          component={SummaryPage}
+        />
+        <Switch>
+          <Route exact path='/contestant/:contestant_id'
+            component={ContestantExpanded}
+          />
+          <Route exact path='/summary/:summaryId'
+            component={ExpandedSummary}
+          />
+          <Route exact path='/saveData'
+            component={SaveDataSummary}
+          />
+        </Switch>
     </BachelorContext.Provider>  
-    </main>
-    <footer>Footer</footer>
+    <footer>
+      <p>Created by Rhiannon Smeby</p>
+    </footer>
   </div>
     )
   }
