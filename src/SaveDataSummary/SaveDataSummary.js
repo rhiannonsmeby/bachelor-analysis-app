@@ -25,7 +25,7 @@ class SaveDataSummary extends React.Component {
         }
         
         this.setState({error: null})
-        fetch('http://localhost:8000/api/summary', {
+        fetch('https://quiet-bayou-13105.herokuapp.com/api/summary', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(summary),

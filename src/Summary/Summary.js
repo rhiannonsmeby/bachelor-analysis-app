@@ -11,7 +11,7 @@ class Summary extends React.Component {
     deleteButton = (e) => {
         e.stopPropagation();
         const { deleteItem } = this.context;
-        fetch(`http://localhost:8000/api/summary/${this.props.summary_id}`, {
+        fetch(`https://quiet-bayou-13105.herokuapp.com/api/summary/${this.props.summary_id}`, {
             method: 'DELETE',
             headers: {
                 'content-type': 'application/json'

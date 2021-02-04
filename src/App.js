@@ -19,7 +19,7 @@ class App extends React.Component {
   }
 
   getSeasonData() {
-    fetch(`http://localhost:8000/api/season`)
+    fetch(`https://quiet-bayou-13105.herokuapp.com/api/season`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Something went wrong')
@@ -37,7 +37,7 @@ class App extends React.Component {
   }
   
   getContestantData() {
-    fetch(`http://localhost:8000/api/contestant`)
+    fetch(`https://quiet-bayou-13105.herokuapp.com/api/contestant`)
       .then(response => {
         if (!response.ok) {
           throw new Error('Something went wrong')
@@ -55,7 +55,7 @@ class App extends React.Component {
   }
 
   getSummaryData() {
-    fetch(`http://localhost:8000/api/summary`)
+    fetch(`https://quiet-bayou-13105.herokuapp.com/api/summary`)
     .then(response => {
       if (!response.ok) {
         throw new Error('Something went wrong')

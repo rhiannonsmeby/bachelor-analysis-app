@@ -36,7 +36,7 @@ export default class SearchDataPage extends React.Component {
             alert('Please search for a keyword')
         }
         else {
-            fetch(`http://localhost:8000/api/contestant/${this.state.topic}/${this.state.keyword}`)
+            fetch(`https://quiet-bayou-13105.herokuapp.com/api/contestant/${this.state.topic}/${this.state.keyword}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('We could not find any matching contestants')

@@ -1,10 +1,10 @@
 # Bachelor Analysis
 
-//link to live app
+https://bachelor-analysis-app.vercel.app/contestant
 
 ### Screenshots
 
-//images of completed app
+![Landing Page](src/images/landingpagetop.jpg)
 
 ### Summary
 
