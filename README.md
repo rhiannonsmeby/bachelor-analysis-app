@@ -5,6 +5,13 @@ https://bachelor-analysis-app.vercel.app/contestant
 ### Screenshots
 
 ![Landing Page](src/Images/landingpagetop.jpg)
+![Season Page](src/Images/seasonpage.jpg)
+![Season Results](src/Images/seasonresults.jpg)
+![Data Search](src/Images/datasearch.jpg)
+![Data Search Results](src/Images/datasearchresults.jpg)
+![Add Summary](src/Images/addsummary.jpg)
+![Summary Page](src/Images/summarypage.jpg)
+![Expanded Summary](src/Images/expandedsummary.jpg)
 
 ### Summary
 
