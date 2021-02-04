@@ -4,7 +4,7 @@ https://bachelor-analysis-app.vercel.app/contestant
 
 ### Screenshots
 
-![Landing Page](src/images/landingpagetop.jpg)
+![Landing Page](src/Images/landingpagetop.jpg)
 
 ### Summary
 
