@@ -25,4 +25,4 @@ React initialized with the create-react-app node package
 
 ### Contact information
 
-For any suggestions, questions, or job opportunities, please contact me at smebyrhi@gmail.com
+For any questions, suggestions, or job opportunities, please contact me at smebyrhi@gmail.com
