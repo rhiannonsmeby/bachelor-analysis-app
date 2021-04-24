@@ -10,7 +10,7 @@ export default function NavBar() {
               <img src="https://img.icons8.com/ios-glyphs/50/000000/rose.png" alt="rose icon"/>
             
             </a>
-            <p>...</p>
+            {/* <p>mobile nav icon here</p> */}
           </div>
         <nav>
           <ul className="nav">
