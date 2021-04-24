@@ -9,6 +9,7 @@ import SearchDataPage from './SearchDataPage/SearchDataPage';
 import SummaryPage from './SummaryPage/SummaryPage';
 import SaveDataSummary from './SaveDataSummary/SaveDataSummary';
 import ExpandedSummary from './ExpandedSummary/ExpandedSummary';
+import Footer from './Footer/Footer';
 
 
 class App extends React.Component {
@@ -102,7 +103,8 @@ class App extends React.Component {
     }
 
   return (
-  <div className='App'>
+  <div className='pageContainer'>
+    <div className='contentWrap'>
     <BachelorContext.Provider
       value={contextValue}>
         <Route exact path='/'
@@ -129,9 +131,8 @@ class App extends React.Component {
           />
         </Switch>
     </BachelorContext.Provider>  
-    <footer>
-      <p>Created by Rhiannon Smeby</p>
-    </footer>
+    </div>
+    <Footer />
   </div>
     )
   }
