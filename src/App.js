@@ -1,15 +1,15 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import BachelorContext from './Context'
-import LandingPage from  './LandingPage/LandingPage'
-import SeasonPage from './SeasonPage/SeasonPage'
+import BachelorContext from './services/Context'
+import LandingPage from  './routes/LandingPage/LandingPage'
+import SeasonPage from './routes/SeasonPage/SeasonPage'
 import './App.css'
-import ContestantExpanded from './ContestantExpanded/ContestantExpanded'
-import SearchDataPage from './SearchDataPage/SearchDataPage';
-import SummaryPage from './SummaryPage/SummaryPage';
-import SaveDataSummary from './SaveDataSummary/SaveDataSummary';
-import ExpandedSummary from './ExpandedSummary/ExpandedSummary';
-import Footer from './Footer/Footer';
+import ContestantExpanded from './components/ContestantExpanded/ContestantExpanded'
+import SearchDataPage from './routes/SearchDataPage/SearchDataPage';
+import SummaryPage from './routes/SummaryPage/SummaryPage';
+import SaveDataSummary from './components/SaveDataSummary/SaveDataSummary';
+import ExpandedSummary from './components/ExpandedSummary/ExpandedSummary';
+import Footer from './components/Footer/Footer';
 
 
 class App extends React.Component {
